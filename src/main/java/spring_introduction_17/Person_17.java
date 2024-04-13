@@ -1,18 +1,28 @@
 package spring_introduction_17;
 
-import spring_introduction_17.Pet_17;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+//@Component("myPerson_17")
 public class Person_17 {
     private Pet_17 pet_17;
+    @Value("${person.surname}")
     private String surname;
+    @Value("${person.age}")
     private int age;
 
-    public Person_17() {
+
+    @Autowired
+    public Person_17(@Qualifier("cat_17") Pet_17 pet_17) {
         System.out.println("Person bean is created");
+        this.pet_17 = pet_17;
     }
 
+
     public void setPet_17(Pet_17 pet_17) {
-        System.out.println("Class Person: set ");
+        System.out.println("Class Person: set pet");
         this.pet_17 = pet_17;
     }
 

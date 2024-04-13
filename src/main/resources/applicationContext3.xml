@@ -8,12 +8,6 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="classpath:myApp_17.properties"/>
 
-    <bean id= "myPet_17"
-          class = "spring_introduction_17.Dog_17"
-          init-method="init"
-          destroy-method="destroy"
-    scope="prototype">
-
-    </bean>
-
+    <context:component-scan base-package="spring_introduction_17" />
+<!--    <context:property-placeholder location="classpath:myApp_17.properties"/>-->
 </beans>
