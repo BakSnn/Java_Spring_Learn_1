@@ -10,7 +10,7 @@ public class Test_3_17 {
 
         //Pet_17 pet_17 = new Cat_17();
         Person_17 person_17 = context.getBean("myPerson_17", Person_17.class);
-        person_17.callYourPet_17();
+        person_17.callYourPet();
         System.out.println(person_17.getSurname());
         System.out.println(person_17.getAge());
         context.close();
